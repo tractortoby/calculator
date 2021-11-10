@@ -25,20 +25,16 @@ import "./App.css";
 //   }
 // }
 
-const App = () => {
-  const [state, setState] = useState({
+function App() {
+  const initialState = {
     total: null,
     next: null,
     operation: null,
-  });
+  }
 
-  // useEffect(() => {
-  //   function handleClick(buttonName) {
-  //     setState(calculate(state, buttonName));
-  //   };
-  // });
+  const [state, setState] = useState(initialState)
 
-  const handleClick = (buttonName) => {
+  const handleClick = buttonName => {
     setState(calculate(state, buttonName));
   };
 
@@ -48,6 +44,6 @@ const App = () => {
       <ButtonPanel clickHandler={handleClick} />
     </div>
   );
-};
+}
 
 export default App;
